@@ -196,7 +196,7 @@ const Otp = () => {
         <button
           onClick={handleVerify}
           disabled={digits.join("").length < 4}
-          className={`w-full py-2 rounded-md font-semibold transition-colors ${
+          className={`w-full py-2 rounded-md font-semibold transition-colors cursor-pointer ${
             digits.join("").length === 4
               ? "bg-blue-400 text-white hover:bg-blue-500"
               : "bg-gray-300 text-gray-700 cursor-not-allowed"
