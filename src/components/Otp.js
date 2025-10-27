@@ -100,7 +100,7 @@ const Otp = () => {
       setIsValid(true);
       setTimeout(() => {
         alert("Login successful!");
-        navigate("/", { replace: true });
+        navigate("/dashboard", { replace: true });
       }, 500);
     } else {
       setMessage("Invalid code. Please try again.");

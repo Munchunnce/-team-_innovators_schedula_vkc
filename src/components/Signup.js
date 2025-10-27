@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import usersData from '../data/mockUserData.json';
+import { MOCK_DOCTORS } from "../data/mockUserData";
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -11,15 +11,15 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    const exists = usersData.users.find(
+    const exists = MOCK_DOCTORS.users.find(
       (u) => u.email.toLowerCase() === email.toLowerCase()
     );
 
     if (exists) {
       setMessage('User already exists. Please login.');
     } else {
-      usersData.users.push({
-        id: usersData.users.length + 1,
+      MOCK_DOCTORS.users.push({
+        id: MOCK_DOCTORS.users.length + 1,
         name,
         email,
         password
@@ -34,18 +34,18 @@ const Signup = () => {
 
   const handleGoogleSignup = () => {
     const googleUser = {
-      id: usersData.users.length + 1,
+      id: MOCK_DOCTORS.users.length + 1,
       name: 'Google User',
       email: 'googleuser@example.com',
       password: 'google-login'
     };
 
-    const exists = usersData.users.find(
+    const exists = MOCK_DOCTORS.users.find(
       (u) => u.email.toLowerCase() === googleUser.email.toLowerCase()
     );
 
     if (!exists) {
-      usersData.users.push(googleUser);
+      MOCK_DOCTORS.users.push(googleUser);
     }
 
     alert(`Logged in successfully as ${googleUser.name} via Google`);
