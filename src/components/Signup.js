@@ -11,15 +11,15 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    const exists = MOCK_DOCTORS.users.find(
+    const exists = MOCK_DOCTORS.find(
       (u) => u.email.toLowerCase() === email.toLowerCase()
     );
 
     if (exists) {
       setMessage('User already exists. Please login.');
     } else {
-      MOCK_DOCTORS.users.push({
-        id: MOCK_DOCTORS.users.length + 1,
+      MOCK_DOCTORS.push({
+        id: MOCK_DOCTORS.length + 1,
         name,
         email,
         password
@@ -34,18 +34,18 @@ const Signup = () => {
 
   const handleGoogleSignup = () => {
     const googleUser = {
-      id: MOCK_DOCTORS.users.length + 1,
+      id: MOCK_DOCTORS.length + 1,
       name: 'Google User',
       email: 'googleuser@example.com',
       password: 'google-login'
     };
 
-    const exists = MOCK_DOCTORS.users.find(
+    const exists = MOCK_DOCTORS.find(
       (u) => u.email.toLowerCase() === googleUser.email.toLowerCase()
     );
 
     if (!exists) {
-      MOCK_DOCTORS.users.push(googleUser);
+      MOCK_DOCTORS.push(googleUser);
     }
 
     alert(`Logged in successfully as ${googleUser.name} via Google`);

@@ -62,7 +62,7 @@ export default function BookAppointment() {
     };
     sessionStorage.setItem("lastAppointment", JSON.stringify(apt));
     alert("Appointment confirmed (demo)");
-    navigate("/appointments");
+    navigate("/review");
   };
 
   return (

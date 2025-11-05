@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import DoctorDetail from "./pages/DoctorDetail";
 import BookAppointment from "./pages/BookAppointment";
 import Footer from "./components/Footer";
+import AppointmentReview from "./pages/AppointmentReview";
+import AppointmentSummary from "./pages/AppoinmentSummary";
 
 const Appointments = () => <div className="p-8 pb-20">Appointments list (TODO)</div>;
 const Records = () => <div className="p-8 pb-20">Medical Records (TODO)</div>;
@@ -44,6 +46,8 @@ function App() {
             <Route path="/doctor/:id" element={<DoctorDetail />} />
             <Route path="/book" element={<BookAppointment />} />
             <Route path="/appointments" element={<Appointments />} />
+            <Route path="/review" element={<AppointmentReview />} />
+            <Route path="/appointment/summary" element={<AppointmentSummary />} />
             <Route path="/records" element={<Records />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
