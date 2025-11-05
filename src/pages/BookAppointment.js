@@ -62,7 +62,7 @@ export default function BookAppointment() {
     };
     sessionStorage.setItem("lastAppointment", JSON.stringify(apt));
     alert("Appointment confirmed (demo)");
-    navigate("/review");
+    navigate("/review", { state: { doctor } });
   };
 
   return (
@@ -119,7 +119,7 @@ export default function BookAppointment() {
 
           <div className="mt-6 flex gap-3">
             <button onClick={handleConfirm} className="flex-1 bg-[#29C1C3] text-white py-3 rounded-lg font-semibold">
-              Confirm & Pay
+              View Appoinment Details
             </button>
             <button onClick={() => navigate(-1)} className="px-4 py-3 border rounded-lg">
               Back
